@@ -1,6 +1,8 @@
 #th3Scann3r ..
 import socket
 import sys
+from typing import TextIO
+
 hostname = socket.gethostname()
 ipaddr = socket.gethostbyname(hostname)
 print(hostname , ipaddr)
