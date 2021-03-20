@@ -1,4 +1,4 @@
-#th3Scann3r ..
+#th3Scann3r
 import socket
 hostname = socket.gethostname()
 ipaddr = socket.gethostbyname(hostname)
@@ -12,3 +12,5 @@ print(a)
 file = open('hostname_ip.txt', 'w')
 file.write(hostname+ ' ' + ipaddr)
 file.close()
+# Passing the input 'a'
+
