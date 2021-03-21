@@ -1,4 +1,4 @@
-# th3Scann3r
+# th3Scann3r -- cyberspidy
 import socket
 import networkscan
 from datetime import datetime
