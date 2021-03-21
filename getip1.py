@@ -14,6 +14,7 @@ a = '{0}.{1}.{2}.0/24'.format(ipsplit[0], ipsplit[1], ipsplit[2])
 print(a)
 td1 = datetime.now()
 print("scan is initiated on", td1)
+
 if __name__ == '__main__':
     network = a
     my_scan = networkscan.Networkscan(network)
@@ -28,4 +29,4 @@ print("scanning completed in", total)
 file = open('hostname_ip.txt', 'w')
 file.write(hostname + ' ' + ipaddr)
 file.close()
-# Passing the input 'a'
+
