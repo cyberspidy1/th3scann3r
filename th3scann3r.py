@@ -1,11 +1,24 @@
-# th3Scann3r -- cyberspidy
+#!/usr/bin/python3.6
+# th3Scann3r
 import socket
 import networkscan
+import os
 from datetime import datetime
 
-hostname = socket.gethostname()
-ipaddr = socket.gethostbyname(hostname)
-print(hostname, ipaddr)
+#hostname = socket.gethostname()
+#ipaddr = socket.gethostbyname(hostname)
+#print(hostname, ipaddr)
+
+gw = os.popen("ip -4 route show default").read().split()
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect((gw[2], 0))
+ipaddr = s.getsockname()[0]
+gateway = gw[2]
+host = socket.gethostname()
+print ("IP:", ipaddr, " GW:", gateway, " Host:", host)
+
+
+
 file = open('myip.txt', 'w')
 file.write(ipaddr)
 file.close()
@@ -26,7 +39,6 @@ td2 = datetime.now()
 total = td2 - td1
 print("scanning completed in", total)
 
-file = open('hostname_ip.txt', 'w')
-file.write(hostname + ' ' + ipaddr)
-file.close()
-
+#file = open('hostname_ip.txt', 'w')
+#file.write(hostname + ' ' + ipaddr)
+#file.close()
