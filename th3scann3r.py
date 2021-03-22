@@ -4,17 +4,21 @@ import networkscan
 import os
 from datetime import datetime
 
+#For Windows environment#
+
 hostname = socket.gethostname()
 ipaddr = socket.gethostbyname(hostname)
 print(hostname, ipaddr)
 
-#nix#gw = os.popen("ip -4 route show default").read().split()
-#nix#s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-#nix#s.connect((gw[2], 0))
-#nix#ipaddr = s.getsockname()[0]
-#nix#gateway = gw[2]
-#nix#host = socket.gethostname()
-#nix#print("IP:", ipaddr, " GW:", gateway, " Host:", host)
+#Enable if you are running from a Linux environment#
+
+#gw = os.popen("ip -4 route show default").read().split()
+#s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#s.connect((gw[2], 0))
+#ipaddr = s.getsockname()[0]
+#gateway = gw[2]
+#host = socket.gethostname()
+#print("IP:", ipaddr, " GW:", gateway, " Host:", host)
 
 file = open('myip.txt', 'w')
 file.write(ipaddr)
