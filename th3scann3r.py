@@ -10,7 +10,7 @@ hostname = socket.gethostname()
 ipaddr = socket.gethostbyname(hostname)
 print(hostname, ipaddr)
 
-#Enable if you are running from a Linux environment#
+#For Linux environment#
 
 #gw = os.popen("ip -4 route show default").read().split()
 #s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
