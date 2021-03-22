@@ -6,19 +6,19 @@ from datetime import datetime
 
 #For Windows environment#
 
-#hostname = socket.gethostname()
-#ipaddr = socket.gethostbyname(hostname)
-#print(hostname, ipaddr)
+hostname = socket.gethostname()
+ipaddr = socket.gethostbyname(hostname)
+print(hostname, ipaddr)
 
 #For Linux environment#
 
-gw = os.popen("ip -4 route show default").read().split()
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.connect((gw[2], 0))
-ipaddr = s.getsockname()[0]
-gateway = gw[2]
-host = socket.gethostname()
-print("IP:", ipaddr, " GW:", gateway, " Host:", host)
+#gw = os.popen("ip -4 route show default").read().split()
+#s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#s.connect((gw[2], 0))
+#ipaddr = s.getsockname()[0]
+#gateway = gw[2]
+#host = socket.gethostname()
+#print("IP:", ipaddr, " GW:", gateway, " Host:", host)
 
 file = open('myip.txt', 'w')
 file.write(ipaddr)
@@ -30,8 +30,7 @@ td1 = datetime.now()
 print("scan is initiated on", td1)
 
 if __name__ == '__main__':
-    network = a
-    my_scan = networkscan.Networkscan(network)
+    my_scan = networkscan.Networkscan(a)
     my_scan.run()
     for i in my_scan.list_of_hosts_found:
         print(i)
