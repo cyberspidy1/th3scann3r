@@ -1,7 +1,7 @@
 # th3Scann3r
 import socket
 import networkscan
-import os
+#import os
 from datetime import datetime
 
 #For Windows environment#
