@@ -1,4 +1,3 @@
-#!/usr/bin/python3.6
 # th3Scann3r
 import socket
 import networkscan
@@ -15,9 +14,7 @@ s.connect((gw[2], 0))
 ipaddr = s.getsockname()[0]
 gateway = gw[2]
 host = socket.gethostname()
-print ("IP:", ipaddr, " GW:", gateway, " Host:", host)
-
-
+print("IP:", ipaddr, " GW:", gateway, " Host:", host)
 
 file = open('myip.txt', 'w')
 file.write(ipaddr)
